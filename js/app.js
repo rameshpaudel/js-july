@@ -1,20 +1,20 @@
 var arr = ["Ram","Shyam","Hari", "Gita"];
 
 // Old way of looping through the arrays
-for(var i=0; i < arr.length;i++){
-    console.log(arr[i])
-}
+// for(var i=0; i < arr.length;i++){
+//     console.log(arr[i])
+// }
 
 //ForEach Property
-arr.forEach(function(value,index){
-    console.log(index,value)  
-})
+// arr.forEach(function(value,index){
+//     console.log(index,value)  
+// })
 
 function outputAllItems(value,index){
     console.log(index,value)  
 }
 
-arr.forEach(outputAllItems)
+// arr.forEach(outputAllItems)
 
 var numOfChars = arr.map(function(value,index){
     return value.toLowerCase();
