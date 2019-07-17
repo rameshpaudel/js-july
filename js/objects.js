@@ -31,6 +31,31 @@ var car = {
 
     area: function(){
         return car.width * car.length
+    },
+    formattedPrice : function(){
+     return "Rs."+ car.price
     }
 }
 
+var testObject = {}
+
+//Dynamic property loading
+
+var key = prompt("Enter the key you want to see the value of")
+
+if(key){
+    // These two are same 
+    //Check if the object has the property
+    // car[key] !== undefined , car.hasOwnProperty(key)
+    if(car.hasOwnProperty(key)){
+        //If the property is a function
+        if(typeof car[key] === "function"){
+            //We invoke the function 
+            alert("Property "+key+ " Value:" + car[key]())
+
+        } else{
+            alert("Property "+key+ " Value:" + car[key])
+        }
+        
+    }
+}
