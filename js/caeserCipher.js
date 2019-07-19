@@ -1,4 +1,4 @@
-function encryptData(myValue){
+function encryptData(myValue,rounds = 2){
     var alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
     var result = "";
 
@@ -7,7 +7,7 @@ function encryptData(myValue){
         let currentCharacter = myValue[i].toLowerCase();
         let currentIndex = alphabets.indexOf(currentCharacter);
     
-        let finalIndex = currentIndex + 2;
+        let finalIndex = currentIndex + rounds;
         
         let finalCharacter = alphabets[finalIndex];
 
@@ -23,7 +23,7 @@ function encryptData(myValue){
 }
 
 
-function decryptData(myValue){
+function decryptData(myValue, rounds = 2){
     var alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
     var result = "";
 
@@ -32,7 +32,7 @@ function decryptData(myValue){
         let currentCharacter = myValue[i].toLowerCase();
         let currentIndex = alphabets.indexOf(currentCharacter);
     
-        let finalIndex = currentIndex - 2;
+        let finalIndex = currentIndex - rounds;
         let finalCharacter = alphabets[finalIndex];
 
         if(myValue[i] == myValue[i].toUpperCase()){
