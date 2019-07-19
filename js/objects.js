@@ -9,6 +9,9 @@ var person = {
         {
             name: "Nepal HSEB College",
             date: '2017-01-02'
+        },
+        function(){
+            console.log("Yahoo")
         }
     ],
     fullName: function(){
@@ -45,6 +48,7 @@ var key = prompt("Enter the key you want to see the value of")
 
 if(key){
     // These two are same 
+    
     //Check if the object has the property
     // car[key] !== undefined , car.hasOwnProperty(key)
     if(car.hasOwnProperty(key)){
@@ -59,3 +63,12 @@ if(key){
         
     }
 }
+
+// To get all the keys in the object
+var objs = Object.keys(car)
+
+//To get all the values in the object
+var values = Object.values(car)
+
+
+var newObj = { ...person, ...car}

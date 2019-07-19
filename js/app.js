@@ -48,3 +48,5 @@ for(var i = 0; i < anotherArr[0].length;i++){
 for(var i=0; i < finalArray.length; i += 3){
     console.log(finalArray[i], finalArray[i+1], finalArray[i+2])
 }
+
+

@@ -2,19 +2,26 @@ var text = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
 
 
 /* 
+// To get the character count
 console.log(text.length)
 
-//Enter the text you want to search
-
-"Occurances", "Postion", "Search Value", "searched data"
+//Task 0: 
+Ask user : Enter the text you want to search
+Return :
+    "Occurances", 
+    "Postion", 
+    "Search Value", 
+    "searched data"
 //
 
 Task 1: Convert general name into ABBR format
-// John Doe
-// John D.
+    // John Doe
+    // John D.
 
 //Task2: Change the casing of the given data
-/// Function => Total => tOTAL */
+    Write a function which converts Total to tOTAL 
+
+*/
 
 
 //This will also work
