@@ -11,7 +11,7 @@ var firstHeader = document.querySelector("#header")
 
 var firstDiv = document.querySelector('div');
 
-var allDivs = document.querySelectorAll('div');
+var allDivs = document.querySelectorAll('div h1');
 
 
 firstDiv.style = "background-color:#ededed; color: green"
@@ -21,3 +21,9 @@ firstDiv.style = "background-color:#ededed; color: green"
 var paragraph = document.querySelector('p')
 
 // allDivs[0].style = 'text-tcxransform: uppercase'
+
+
+function changeBackground(){
+    console.log("test change bg",  allDiv[allDiv.length - 1])
+    allDivs[allDivs.length - 1].style = 'background: yellow; color: green'
+}

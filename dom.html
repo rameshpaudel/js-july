@@ -5,6 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document Object Model</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0; 
+            }
+            div h1{
+                background: black; 
+                color: white;
+                padding: 20px;
+                transition: all 2s linear;
+            }
+            div p{
+                background: #2f2f2f;
+                color: white;
+                padding:20px;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -19,11 +36,12 @@
             <a href="#">Click Here</a>
         </header>
 
-            <div>
-                <h1>Hello</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti blanditiis soluta enim saepe.</p>
-                
-            </div>
+        <div onclick="changeBackground()">
+            <h1>Hello click on this</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti blanditiis soluta enim saepe.</p>
+            
+        </div>
         <script src="js/dom.js"></script>
     </body>
 </html>
+
