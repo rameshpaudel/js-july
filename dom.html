@@ -10,6 +10,16 @@
                 margin: 0;
                 padding: 0; 
             }
+            header{
+                transition: all 1s linear;
+            }
+            .header{
+                padding: 50px;
+                position: absolute;
+                right:0;
+                top:0;
+                background: green;
+            }
             div h1{
                 background: black; 
                 color: white;
@@ -24,19 +34,19 @@
         </style>
     </head>
     <body>
+        <a href="#">Hello</a>
         <div class="container">
             <h1>DOM</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti blanditiis soluta enim saepe.</p>
             
         </div>
-
         <header id="header">
             <h1>Header</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellendus, adipisci repudiandae cumque velit quos omnis debitis saepe quia optio voluptate nemo doloremque vero cupiditate dolorem corrupti, maiores reiciendis.</p>
             <a href="#">Click Here</a>
         </header>
 
-        <div onclick="changeBackground()">
+        <div>
             <h1>Hello click on this</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti blanditiis soluta enim saepe.</p>
             
