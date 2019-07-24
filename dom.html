@@ -1,57 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document Object Model</title>
-        <style>
-            *{
-                margin: 0;
-                padding: 0; 
-            }
-            header{
-                transition: all 1s linear;
-            }
-            .header{
-                padding: 50px;
-                position: absolute;
-                right:0;
-                top:0;
-                background: green;
-            }
-            div h1{
-                background: black; 
-                color: white;
-                padding: 20px;
-                transition: all 2s linear;
-            }
-            div p{
-                background: #2f2f2f;
-                color: white;
-                padding:20px;
-            }
-        </style>
-    </head>
-    <body>
-        <a href="#">Hello</a>
-        <div class="container">
-            <h1>DOM</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti blanditiis soluta enim saepe.</p>
-            
-        </div>
-        <header id="header">
-            <h1>Header</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellendus, adipisci repudiandae cumque velit quos omnis debitis saepe quia optio voluptate nemo doloremque vero cupiditate dolorem corrupti, maiores reiciendis.</p>
-            <a href="#">Click Here</a>
-        </header>
 
-        <div>
-            <h1>Hello click on this</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti blanditiis soluta enim saepe.</p>
-            
-        </div>
-        <script src="js/dom.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document Object Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            transition: all 1s linear;
+        }
+
+        .header {
+            padding: 50px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: green;
+        }
+
+        div h1 {
+            background: black;
+            color: white;
+            padding: 20px;
+            transition: all 2s linear;
+        }
+
+        div p {
+            background: #2f2f2f;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Hello</a>
+    <div class="container">
+        <h1>DOM</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum
+            distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti
+            blanditiis soluta enim saepe.</p>
+
+            <a id="another" href="http://twitter.com">Click Here to navigate to twitter</a>
+
+    </div>
+    <header id="header">
+        <h1>Header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellendus, adipisci repudiandae cumque
+            velit quos omnis debitis saepe quia optio voluptate nemo doloremque vero cupiditate dolorem corrupti,
+            maiores reiciendis.</p>
+        <a id="navigate" href="https://google.com" test="somewhere">Click Here</a>
+    </header>
+
+    <div>
+        <h1>Hello click on this</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem odit ducimus ab, soluta debitis dolorum
+            distinctio ipsa molestiae tenetur facilis. Recusandae quibusdam assumenda provident fugit deleniti
+            blanditiis soluta enim saepe.</p>
+
+    </div>
+    <script src="js/dom.js"></script>
+    <script>
+        function changeHeader() {
+            var heading = document.querySelector('header h1')
+            heading.innerText = "Another Header"
+        }
+
+        function navigateTo(event) {
+            event.preventDefault();
+            event.target.innerText = "Clicked"
+            let href = event.target.getAttribute('href');
+
+            //Set timeout fires the function after the duration
+            setTimeout(function () {
+                //Redirect to anothre page
+                document.location.assign(href)
+
+            }, 5000)
+
+
+
+        }
+
+
+        document.querySelector('header h1').onclick = changeHeader
+
+        document.getElementById('navigate').onclick = navigateTo
+        document.getElementById('another').onclick = navigateTo
+
+            //Set timeout runs after the given duration
+            // setTimeout(function(){
+            //     alert("Hello World")
+            // }, 2000)
+    </script>
+</body>
+
 </html>
-
