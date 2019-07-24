@@ -94,6 +94,11 @@
         document.getElementById('navigate').onclick = navigateTo
         document.getElementById('another').onclick = navigateTo
 
+        document.oncontextmenu = function(event){
+            event.preventDefault();
+            document.body.style = "background-color: green"
+        }
+
             //Set timeout runs after the given duration
             // setTimeout(function(){
             //     alert("Hello World")
