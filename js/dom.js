@@ -48,10 +48,17 @@ firstHeader.onclick = function(event){
     firstHeader.classList.add("header")
 }
 
-function randomNumer(max = 255){
+function randomNumber(max = 255){
     return Math.round(Math.random() * max)
 }
 
-// function changeBodyBackground(){
-//     document.body.style = 
-// }
+
+function changeBodyBg(){
+    allDivs[0].style = `background:rgba(${randomNumber()} , ${randomNumber()} , ${randomNumber()}, ${Math.random()} )`
+}
+
+var theInterval = setInterval(changeBodyBg, 1000)
+
+setTimeout(function(){
+    clearInterval(theInterval)
+}, 5000)
