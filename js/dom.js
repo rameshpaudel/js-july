@@ -47,3 +47,11 @@ firstHeader.onclick = function(event){
     // console.log(event.target)
     firstHeader.classList.add("header")
 }
+
+function randomNumer(max = 255){
+    return Math.round(Math.random() * max)
+}
+
+// function changeBodyBackground(){
+//     document.body.style = 
+// }
