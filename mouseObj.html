@@ -12,12 +12,25 @@
     <h1>Hello JS</h1>
 
     <script>
-        window.addEventListener('mousemove', function (e) {
 
-            document.querySelector('h1').style = `
+        function random(){
+            return Math.round(Math.random() * 255)
+        }
+
+        window.addEventListener('mousemove', function (e) {
+            let elementStyle =`
             position:fixed; 
             top: ${e.clientY}px;  
             left: ${e.clientX}px;`
+
+            if(e.clientX > 500){
+                document.body.style = `background: rgb(${random()}, ${random()}, ${random()} )`;
+                document.querySelector('h1').style = elementStyle
+                
+            } else {
+                document.querySelector('h1').style = elementStyle +     `color: rgb(${random()}, ${random()}, ${random()} )`
+            }
+            
         })
     </script>
 </body>
