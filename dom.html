@@ -105,6 +105,23 @@
             // setTimeout(function(){
             //     alert("Hello World")
             // }, 2000)
+
+
+            window.addEventListener('offline', function(){
+                document.body.style= 'opacity:0'
+                alert("you are offline")
+                console.log('Offline')
+            })
+            
+            window.addEventListener('online', function(){
+                document.body.style= 'opacity:1'
+                console.log('Online')
+            })
+
+            window.addEventListener('resize', function(e){
+                console.log("The height" ,e.srcElement.innerHeight)
+                console.log("The width" ,e.srcElement.innerWidth)
+            })
     </script>
 </body>
 

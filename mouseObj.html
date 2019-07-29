@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Move text</title>
+</head>
+
+<body>
+    <h1>Hello JS</h1>
+
+    <script>
+        window.addEventListener('mousemove', function (e) {
+
+            document.querySelector('h1').style = `
+            position:fixed; 
+            top: ${e.clientY}px;  
+            left: ${e.clientX}px;`
+        })
+    </script>
+</body>
+
+</html>
