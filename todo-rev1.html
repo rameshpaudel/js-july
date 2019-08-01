@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TO DO</title>
+    <style>
+        .modal{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: fixed;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 50vh;
+            background: red;
+        }
+        .modal .close{
+            position: fixed;
+            top: 10px;
+            right:10px;
+
+        }
+        .show{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>To do List</h1>
+    <button>Toggle Hidden</button>
+    <button id="addTask">Add Task</button>
+
+    <table>
+        <thead>
+            <tr>
+                <td>SN</td>
+                <td>Task</td>
+                <td>Created At</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+               
+        </tbody>
+    </table>
+
+    <div class="modal">
+        <button class="close">Close</button>
+        <h2>Add a task</h2>
+        <form action="#">
+            <input type="text" name="task" placeholder="Enter a task">
+            <button type="submit">Add task</button>
+        </form>
+    </div>
+    
+    <script>
+        //Add a task
+            
+        
+        document.querySelector('#addTask').addEventListener('click', function(e){
+            
+            var task = prompt("Enter the task")
+            
+            //Setting default value
+            var sn = 1;
+            //Fetching the last serial num from dom
+
+            var domSN = document.querySelector('tbody tr:last-child td:first-child')
+            if(domSN){
+
+                sn = parseInt(domSN.textContent) + 1
+            }
+
+        
+            
+            var theFormat = `
+            <tr>
+                    <td>${sn}</td>
+                    <td>${task}</td>
+                    <td>${Date()}</td>
+                    <td>
+                        <button>Hide/Show</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                `
+
+            document.querySelector('tbody').innerHTML =  document.querySelector('tbody').innerHTML + theFormat
+
+        })
+    </script>
+    
+</body>
+</html>
