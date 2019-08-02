@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOP in JS</title>
+</head>
+<body>
+    
+    <script>
+    
+    var todo ={
+        sn: 1,
+        task : "Do something",
+        createdAt: Date(),
+        status: true
+    }
+    
+
+    class Task{
+        constructor(sn, task, createdAt, status){
+            this.sn = sn;
+            this.task = task;
+            this.createdAt = createdAt;
+            this.status = status;
+        }
+
+        getSn(){
+            return this.sn
+        }
+
+        setSn(sn){
+            this.sn = sn
+            return this
+        }
+    }
+
+    var task1 = new Task(1,"Go shopping", Date(), false)
+    var task2 = new Task(10,"Go fishing", Date(), true)
+
+
+
+    class Todo{
+        constructor(){
+            this.lists = []
+        }
+
+        add(sn,task,createdAt,status){
+            var t1 = new Task(sn,task,createdAt,status)
+            this.lists.push(t1);
+            return this; //For method chaining
+        }
+
+        remove(index){
+            this.lists.splice(index,1)
+            return this;
+        }
+
+    }
+
+    var myToDo = new Todo()
+
+
+    </script>
+    
+</body>
+</html>
