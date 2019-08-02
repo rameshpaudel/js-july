@@ -36,30 +36,58 @@
         }
     }
 
-    var task1 = new Task(1,"Go shopping", Date(), false)
-    var task2 = new Task(10,"Go fishing", Date(), true)
+    
+    
 
 
 
     class Todo{
         constructor(){
             this.lists = []
+            this.keyName = 'tasks'
         }
 
         add(sn,task,createdAt,status){
             var t1 = new Task(sn,task,createdAt,status)
             this.lists.push(t1);
+            this.saveToLocalStorage();
+
             return this; //For method chaining
+        }
+
+        generateInHTML(){
+
+        }
+
+        setKeyName(name){
+            this.keyName = name
+            return this;
+        }
+
+        saveToLocalStorage(){
+            localStorage.setItem(this.keyName, JSON.stringify(this.lists))
+        }
+
+        loadFromLocalStorage(){
+            this.lists = JSON.parse(localStorage.getItem(this.keyName)) || [];
         }
 
         remove(index){
             this.lists.splice(index,1)
+            this.saveToLocalStorage();
             return this;
         }
 
     }
 
     var myToDo = new Todo()
+    myToDo.setKeyName('tests')
+    window.onload = function(){
+        myToDo.loadFromLocalStorage()
+    }
+    // myToDo
+    // .add(1,"Go shopping", Date(), false)
+    // .add(10,"Go fishing", Date(), true)
 
 
     </script>
