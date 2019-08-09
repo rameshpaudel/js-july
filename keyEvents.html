@@ -32,6 +32,20 @@
             }
             console.log('The key that was pressed', event.key, "Code", event.keyCode)  
         })
+        var orientation = 'landscape'
+        
+        window.addEventListener('resize', function(e){
+            var height = window.innerHeight 
+            var width = window.innerWidth
+
+            if(height/width  > 1){
+                orientation = 'potrait'
+                document.body.innerHTML = "POTRAIT MODE"
+            } else {
+                orientation = 'landscape'
+                document.body.innerHTML = "LANDSCAPE     MODE"
+            }
+        });
     </script>
 </body>
 </html>
