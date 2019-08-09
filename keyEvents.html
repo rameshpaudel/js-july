@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Events on JS</title>
+</head>
+<body>
+    <input type="text">
+
+    <audio controls>
+        <source src="assets/example.ogg" type="audio/ogg">
+        <source src="assets/example.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <script>
+        var initTime = [];
+    
+        document.querySelector("input").addEventListener('keydown', function(event){
+            console.log(event);
+            event.preventDefault();
+            initTime.push(event.timeStamp)
+            if(event.keyCode === 13){
+                alert("You pressed enter key")
+            }
+            if(event.ctrlKey && event.key == 'b'){
+                document.querySelector('audio').play();
+            }
+            if(event.ctrlKey && event.key == 'e'){
+                document.querySelector('audio').pause();
+            }
+            console.log('The key that was pressed', event.key, "Code", event.keyCode)  
+        })
+    </script>
+</body>
+</html>
