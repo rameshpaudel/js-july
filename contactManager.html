@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Manager</title>
+    <link rel="stylesheet" href="css/contact-manager.css">
+</head>
+<body>
+    <input type="search" placeholder="eg. John Doe">
+    <div class="container">
+        <ul>
+            <li>
+                <div class="contact-info">
+                    <div>
+                        <img src="http://lorempixel.com/100/100" alt=""/>
+                    </div>
+                    <div>
+                        <p>Name: <strong>John Doe</strong></p>
+                        <address>Kathmandu, Nepal</address>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var contacts = [
+            {
+                name: "John Doe",
+                address: "Kathmandu",
+                phone: 9779840000000,
+                email: 'john@doe.com'
+            }
+        ]
+
+        var list = document.querySelector('ul').innerHTML
+        for (var i = 0; i < 10; i++) {
+
+            document.querySelector('ul').innerHTML += list
+
+        }
+    </script>
+</body>
+
+</html>
