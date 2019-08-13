@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Oriented Design</title>
+</head>
+<body>
+    <script>
+    
+    class NameBuilder{
+        constructor(firstName,lastName,age){
+            this.firstName = firstName;
+            this.lastName = lastName
+            this.age = age
+        }
+
+        add(param1, param2){
+            return param1 + param2;
+        }
+    }
+    
+    var person1 = new NameBuilder("John", "Doe", 38)
+    var person2 = new NameBuilder("Jane", "Doe", 28)
+    var person3 = new NameBuilder("Harry", "Doe", 28)
+    var person4 = new NameBuilder("Joe", "Doe", 28)
+    
+    console.log(person1, person2)
+
+  
+    </script>
+</body>
+</html>
+
