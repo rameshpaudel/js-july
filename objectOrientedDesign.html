@@ -15,19 +15,50 @@
             this.lastName = lastName
             this.age = age
         }
-
-        add(param1, param2){
-            return param1 + param2;
-        }
     }
-    
-    var person1 = new NameBuilder("John", "Doe", 38)
-    var person2 = new NameBuilder("Jane", "Doe", 28)
-    var person3 = new NameBuilder("Harry", "Doe", 28)
-    var person4 = new NameBuilder("Joe", "Doe", 28)
-    
-    console.log(person1, person2)
 
+
+    class NameList{
+        constructor(){
+            this.nameList = [];
+        }
+
+        add(firstName, lastName, age){
+            let name = new NameBuilder(firstName,lastName,age);
+            this.nameList.push(name);
+            return this;
+        }
+
+        remove(index){
+            this.nameList.splice(index, 1);
+            return this;
+        }
+
+        generateOutput(){
+            //Output to the html
+
+            
+        }
+
+
+    }
+    var list = new NameList();
+
+    list.add("John", "Doe", 38)
+        .add("Jane", "Doe", 28)
+        .add("Harry", "Doe", 28)
+
+    console.log(list.add("Joe", "Doe", 28))
+    
+    // var anotherList = new NameList();
+
+    // anotherList.add("John", "K", 38)
+    //     .add("Jane", "P", 28)
+    //     .add("Harry", "S", 28)
+    //     console.log(anotherList.add("Joe", "T", 28))
+        
+    
+    //NameList
   
     </script>
 </body>
