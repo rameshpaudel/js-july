@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XHR</title>
+</head>
+<body>
+    <h1>AJAX</h1>
+    <script>
+    
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET",'./todo.html');
+
+        xhr.onreadystatechange = function(event){
+            if(event.srcElement.readyState === 4){
+                console.log('The data', );
+
+                var iframe = document.createElement('iframe');
+                iframe.setAttribute('srcdoc',xhr.responseText );
+                document.body.appendChild(iframe)
+            }
+        }
+
+        xhr.onprogress = function(event){
+            console.log("Progress event", event.srcElement.readyState)        
+        }
+        
+        xhr.onload = function(event){
+            console.log("Loaded" ,event)
+            console.log(event.srcElement.readyState)
+        }
+        xhr.send(); 
+    </script>
+</body>
+</html>
