@@ -10,6 +10,7 @@ function createARow(sn, task, createdAt){
     //When getting data from param the obj sets the key automatically
     
     var obj = {sn,task,createdAt}
+    
     //Appending the object to tasklist
     allTasks.push(obj);
 

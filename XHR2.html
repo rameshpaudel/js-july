@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XHR</title>
+</head>
+<body>
+    <h1>Vanilla AJAX Requests in JS</h1>
+    <script>
+        var xhr = new XMLHttpRequest();
+        //This will fire up when ready state changes
+        // xhr.onreadystatechange = function(event){
+        //     console.log(xhr.readyState);
+        // }
+
+
+        xhr.onload = function(event){
+            alert('Load is complete')
+            console.log(event);
+            
+
+            document.body.innerHTML += xhr.responseText;
+        }
+        xhr.open("GET", "./todo.html");
+        xhr.send();
+    </script>
+</body>
+</html>

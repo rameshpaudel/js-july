@@ -19,14 +19,14 @@
 
         window.addEventListener('mousemove', function (e) {
             let elementStyle =`
-            position:fixed; 
+            position: fixed; 
             top: ${e.clientY}px;  
             left: ${e.clientX}px;`
 
             if(e.clientX > 500){
                 document.body.style = `background: rgb(${random()}, ${random()}, ${random()} )`;
                 document.querySelector('h1').style = elementStyle
-                
+
             } else {
                 document.querySelector('h1').style = elementStyle +     `color: rgb(${random()}, ${random()}, ${random()} )`
             }

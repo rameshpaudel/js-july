@@ -12,20 +12,21 @@
     
         let xhr = new XMLHttpRequest();
         xhr.open("GET",'./todo.html');
-
+        var parsedOutput;
         xhr.onreadystatechange = function(event){
+            console.log(event.srcElement.readyState);
             if(event.srcElement.readyState === 4){
-                console.log('The data', );
 
+                parsedOutput = xhr.responseText;
                 var iframe = document.createElement('iframe');
                 iframe.setAttribute('srcdoc',xhr.responseText );
                 document.body.appendChild(iframe)
             }
         }
 
-        xhr.onprogress = function(event){
-            console.log("Progress event", event.srcElement.readyState)        
-        }
+        // xhr.onprogress = function(event){
+        //     console.log("Progress event", event.srcElement.readyState)        
+        // }
         
         xhr.onload = function(event){
             console.log("Loaded" ,event)

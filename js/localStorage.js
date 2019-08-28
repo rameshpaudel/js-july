@@ -21,3 +21,8 @@ localStorage.setItem('products', strigifiedProducts)
 
 //Parsing the string localstorage item to JSON
 var parsed = JSON.parse(localStorage.getItem('products'))
+
+window.addEventListener('load', function(){
+    //Get the items from localstorage
+    //Populate the values
+})
