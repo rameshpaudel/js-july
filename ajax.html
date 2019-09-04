@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX 101</title>
+</head>
+<body>
+    <h1>AJAX 101</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, sapiente? Corporis beatae deserunt suscipit incidunt ratione tenetur, dignissimos harum quisquam! Cum suscipit sed neque laboriosam harum perferendis adipisci illum dignissimos?</p>
+    <a href="#">AJAX Request</a>
+
+    <form action="#" method="POST">
+        <input type="text" name="firstName" placeholder="FirstName">
+        <input type="text" name="lastName" placeholder="LastName">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="output"></div>
+    <script>
+        
+
+        var xhr = new XMLHttpRequest();
+     
+
+        document.querySelector('a').addEventListener('click', function(e){
+            e.preventDefault();
+            xhr.open("GET", "./dom.html");
+            xhr.send();
+
+        })
+        // xhr.onreadystatechange = function(){
+        //     console.log(xhr.readyState)
+        // }
+
+        xhr.onloadend = function(){
+            console.log(xhr)
+            console.log(xhr.response)
+            document.querySelector("#output").innerHTML = xhr.response
+        }
+    </script>
+</body>
+</html>
